@@ -12,13 +12,14 @@ APPROVED_BREEDS = [
 ]
 
 class Dog:
-    approved_breeds = ["Labrador", "German Shepherd", "Golden Retriever", "Bulldog", "Poodle"]
+    approved_breeds = [
+        "Labrador Retriever", "German Shepherd", "Golden Retriever", 
+        "Bulldog", "Beagle", "Poodle", "Rottweiler", "Yorkshire Terrier"
+    ]
 
-    def __init__(self, name, breed):
-        self._name = None  # Use a private attribute to store the name
-        self._breed = None  # Use a private attribute to store the breed
-        self.name = name  # Use the property setter for validation
-        self.breed = breed  # Use the property setter for validation
+    def __init__(self):
+        self._name = None
+        self._breed = None
 
     @property
     def name(self):
@@ -40,6 +41,4 @@ class Dog:
         if value in self.approved_breeds:
             self._breed = value
         else:
-            print("Breed must be in the list of approved breeds.")
-
-
+            print("Breed must be in list of approved breeds.")
